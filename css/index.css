@@ -1,0 +1,86 @@
+body {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #bdc3c7;
+    font-family: sans-serif;
+}
+
+.banner {
+    width:450px;
+    margin: 0;
+    float: left;
+    position: absolute;
+    top: -15px;
+    padding-left: 20px;
+}
+
+.centerCanvas{
+    padding: 0;
+    margin: 0;
+}
+
+#searchIcon {
+    transition: 0.2s;
+    cursor: pointer;
+    font-size: 26px;
+    color: lightblue;
+    
+    position: absolute;
+    top: 50%;
+    padding-left: 0.5px;
+    left: calc(50% + 180px);
+    transform: translate(-50%, -50%);
+}
+.searchIconBackground {
+    transition: 0.2s;
+    background-color: darkcyan;
+    width: 42px;
+    height: 42px;
+    position: absolute;
+    top: 50%;
+    border-radius: 50%;
+    left: calc(50% + 180px);
+    transform: translate(-50%, -50%);
+}
+
+.searchBar {
+    transition: 0.2s;
+    padding: 0px;
+    margin: 0px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #34495e;
+    border-radius: 40px;
+    width: 300px;
+    height: 40px;
+    text-align: center;
+}
+
+#searchInput{
+    transition: 0.2s;
+    background: rgba(0, 0, 0, 0);
+    color: lightcyan;
+    width: 280px;
+    height: 25px;
+    font-size: 24px;
+    border: 0;
+    padding-top: 8px;
+    text-align: center;
+}
+#searchInput:focus {
+    outline: none;
+}
+
+.searchBar:hover, #searchInput:hover {
+    transition: 0.3s;
+    width: 550px;
+}
+.searchBar:hover ~ #searchIcon, .searchBar:hover ~ .searchIconBackground {
+    transition: 0.3s;
+    left: calc(50% + 305px);
+}
