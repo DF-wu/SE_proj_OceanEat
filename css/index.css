@@ -9,12 +9,28 @@ body {
 }
 
 .banner {
-    width:450px;
     margin: 0;
-    float: left;
     position: absolute;
-    top: -15px;
-    padding-left: 20px;
+    width:600px;
+    top: calc(50% - 170px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: bannerAnime 5s 1;
+}
+@keyframes
+bannerAnime {
+    0% {
+        opacity: 0;
+        top: calc(50% - 100px);
+        height: 150px;
+    }
+    75% {
+        opacity: 0.85;
+    }
+    100% {
+        opacity: 1;
+        height: 225px;
+    }
 }
 
 .centerCanvas{
