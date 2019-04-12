@@ -119,3 +119,91 @@ bannerAnime {
     transition: 0.3s;
     left: calc(50% + 305px);
 }
+
+@media screen and (max-width: 700px) {
+    .banner {
+        width:500px;
+        animation: bannerAnime 5s 1;
+    }
+    @keyframes
+    bannerAnime {
+        0% {
+            opacity: .1;
+            top: calc(50% - 150px);
+            width: 400px;
+        }
+        75% {
+            width: 500px;
+            top: calc(50% - 170px);
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .searchBar {
+        width: 50vw;
+    }
+    #searchInput{
+        width: 50vw;
+    }
+    
+    #searchIcon {
+        left: 82vw;
+    }
+    .searchIconBackground {
+        left: 82vw;
+    }
+    .searchBar:hover, #searchInput:hover {
+        transition: 0.3s;
+        width: 70vw;
+    }
+    .searchBar:hover ~ #searchIcon, .searchBar:hover ~ .searchIconBackground {
+        transition: 0.3s;
+        left: 92vw;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .banner {
+        width:450px;
+        animation: bannerAnime 5s 1;
+    }
+    @keyframes
+    bannerAnime {
+        0% {
+            opacity: .1;
+            top: calc(50% - 150px);
+            width: 350px;
+        }
+        75% {
+            width: 450px;
+            top: calc(50% - 170px);
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .banner {
+        width: calc(100vw - 50px);
+        animation: bannerAnime 5s 1;
+    }
+    @keyframes
+    bannerAnime {
+        0% {
+            opacity: .1;
+            top: calc(50% - 150px);
+            width: calc(100vw - 100px);
+        }
+        75% {
+            width: calc(100vw - 50px);
+            top: calc(50% - 170px);
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+}
