@@ -22,6 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'wb+f@kagx4lb(#wxs*a4c4ve-uro6^w*8dt(3k4rv@=b)@g#&='
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -38,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'OceanEat.apps.OceaneatConfig',
+    'rest_framework',
+    'OceanEatAPIs',
+
 ]
 
 MIDDLEWARE = [

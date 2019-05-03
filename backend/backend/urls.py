@@ -16,6 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from django.conf.urls import url, include
+
+from rest_framework.routers import DefaultRouter
+from OceanEatAPIs import views
+
+
+
+router = DefaultRouter()
+router.register(r'music', views.MemberViewSet)
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    url(r'admin/', admin.site.urls),
+    url(r'^api/', include(router.urls)),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
