@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
-import os
+import os, json
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -75,13 +75,21 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
+TEST = True
+# TEST = False
+MYSQL_SEETING_JSON_PATH = 'backend/mysql_test.json' if TEST else 'backend/mysql_dev.json'
+
+MYSQL_SEETING_JSON_PATH = os.path.join(BASE_DIR, MYSQL_SEETING_JSON_PATH)
+DATABASES_SETTINGS = json.load(open(MYSQL_SEETING_JSON_PATH, 'r', encoding='UTF-8'))
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
     }
 }
 
+for k in DATABASES_SETTINGS.keys():
+    DATABASES['default'][k] = DATABASES_SETTINGS[k]
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
