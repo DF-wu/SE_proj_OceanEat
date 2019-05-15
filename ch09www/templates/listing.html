@@ -1,0 +1,59 @@
+<!-- listing.html -->
+{% extends 'base.html' %}
+
+{% block title %} 我有話要說 {% endblock %}
+
+
+{% block headmessage %}
+	<h3 style='font-family:標楷體;'>本站文章列表</h3>
+{% endblock %}
+
+{% block content %}
+<div class='container'>
+
+<div class='row'>
+	<div class='col-md-12'>
+		<div class='panel panel-default'>
+			<div class='panel-heading' align=center>
+				<h3>～～寶寶心裡苦，寶寶只在心裡說～～</h3>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+{% if message %}
+	<div class='alert alert-warning'>{{message}}</div>
+{% endif %}
+
+<div class='row'>
+{% for p in posts %}
+	<div class="col-sm-12 col-md-6">
+		<div class='panel panel-primary' {% cycle "panel-primary" "panel-info" "panel-warning" "panel-success" %} >
+			
+
+			<div class='panel-heading'>
+				<table>
+					<tr>
+						<td>
+							【{{p.nickname}}】覺得{{p.mood}}
+						</td>
+						<td align=right>
+							<i><small>{{ p.pub_time }}</small></i>
+						</td>
+					</tr>	
+				</table>
+
+			</div>
+			<div class='panel-body'>{{ p.message | linebreaks }}</div>
+			
+		</div>
+	</div>
+{% endfor %}
+</div>
+
+</div>
+
+{% endblock %}
+
