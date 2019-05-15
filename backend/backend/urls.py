@@ -15,11 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path
+from django.conf.urls import url, include
+from rest_framework.routers import DefaultRouter
 from django.views.generic import TemplateView
+from OrderController import views
+
+router = DefaultRouter()
+router.register(r'OrderController', views.OrderControllerViewSet)
 
 # For APIs
 urlpatterns = [
-    
+    url(r'^api/', include(router.urls)),
 ]
 
 urlpatterns += [
