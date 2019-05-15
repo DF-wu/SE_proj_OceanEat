@@ -37,10 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'OceanEat.apps.OceaneatConfig',
+    # 'OceanEat.apps.OceanEatConfig',
+    'OceanEat',
 ]
 
-INSTALLED_APPS.append('OrderController.apps.OrdercontrollerConfig')
+# INSTALLED_APPS.append('OrderController.apps.OrdercontrollerConfig')
 INSTALLED_APPS.append('rest_framework')
 
 MIDDLEWARE = [

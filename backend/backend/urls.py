@@ -18,14 +18,26 @@ from django.urls import path, re_path
 from django.conf.urls import url, include
 from rest_framework.routers import DefaultRouter
 from django.views.generic import TemplateView
-from OrderController import views
+from OceanEat import views
+import  OceanEat
 
 router = DefaultRouter()
-router.register(r'OrderController', views.OrderControllerViewSet)
+
+# register OceanEat ViewSet (API)
+router.register(r'OceanEat/Customer', views.CustomerViewSet)
+
+router.register(r'OceanEat/Delivery', views.DeliveryViewSet)
+
+router.register(r'OceanEat/Restaurant', views.RestaurantViewSet)
+
+router.register(r'OceanEat/Dishes', views.DishesViewSet)
+
 
 # For APIs
 urlpatterns = [
     url(r'^api/', include(router.urls)),
+
+
 ]
 
 urlpatterns += [

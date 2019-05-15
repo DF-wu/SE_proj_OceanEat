@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class OceaneatConfig(AppConfig):
+class OceanEatConfig(AppConfig):
     name = 'OceanEat'
