@@ -24,22 +24,16 @@ import  OceanEat
 router = DefaultRouter()
 
 # register OceanEat ViewSet (API)
-router.register(r'OceanEat/Customer', views.CustomerViewSet)
-
-router.register(r'OceanEat/Delivery', views.DeliveryViewSet)
-
-router.register(r'OceanEat/Restaurant', views.RestaurantViewSet)
-
-router.register(r'OceanEat/Dishes', views.DishesViewSet)
-
+router.register(r'Customer', views.CustomerViewSet)
+router.register(r'Delivery', views.DeliveryViewSet)
+router.register(r'Restaurant', views.RestaurantViewSet)
+router.register(r'Dishes', views.DishesViewSet)
 
 # For APIs
 urlpatterns = [
     url(r'^api/', include(router.urls)),
-
-
 ]
 
-urlpatterns += [
-    re_path(r'(?P<path>.*)', TemplateView.as_view(template_name="index.html"))
-]
+# urlpatterns += [
+#     re_path(r'(?P<path>.*)', TemplateView.as_view(template_name="index.html"))
+# ]
