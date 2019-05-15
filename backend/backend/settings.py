@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'OceanEat.apps.OceaneatConfig',
 ]
 
+INSTALLED_APPS.append('OrderController.apps.OrdercontrollerConfig')
+INSTALLED_APPS.append('rest_framework')
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
