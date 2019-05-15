@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.core.mail import EmailMessage
 from datetime import datetime
 from mysite import models, forms
+import json
 
 # Create your views here.
 def userinfo(request):
@@ -29,6 +30,7 @@ def logout(request):
 
 
 def login(request):
+	message = "haha"
 	if request.method == 'POST':
 		login_form = forms.LoginForm(request.POST)
 		if login_form.is_valid():
@@ -50,8 +52,13 @@ def login(request):
 	else:
 		login_form = forms.LoginForm()
 
-	#return HttpResponse('ff')
-	return render(request, 'login.html', locals())
+	data={
+		'state':True,
+		'message':message,
+	}
+	#returnValue = magicNum, message
+	return HttpResponse(json.dumps(data))
+	#return render(request, 'login.html', locals())
 
 def contact(request):
 	message = "盡情的寫吧"
