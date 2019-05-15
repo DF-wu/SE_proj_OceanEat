@@ -6,27 +6,20 @@ class CustomerSerializer(serializers.ModelSerializer):
         model = Customer
         fields = '__all__'
 
-
-
 class DeliverySerializer(serializers.ModelSerializer):
     class Meta:
         model = Delivery
         fields = '__all__'
-
-
 
 class RestaurantSerializer(serializers.ModelSerializer):
     class Meta:
         model = Restaurant
         fields = '__all__'
 
-
-
 class DishesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Dishes
         fields = '__all__'
-
 
 class OrderSerializer(serializers.ModelSerializer):
     class Meta:
