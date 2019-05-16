@@ -1,7 +1,0 @@
-{
-    "NAME": "DATABASE_SCHEMA_NAME",
-    "USER": "USERNAME",
-    "PASSWORD": "PASSWORD",
-    "HOST": "DATABASE_HOST",
-    "PORT": "DATABASE_PORT"
-}
