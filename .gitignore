@@ -1,6 +1,9 @@
-backend/.idea/backend.iml
-backend/.idea/misc.xml
-backend/.idea/modules.xml
-backend/.idea/vcs.xml
-backend/.idea/workspace.xml
-backend/backend/__pycache__
+/.idea
+*.pyc
+backend/.idea/
+__pycache__
+backend/backend/mysql_dev.json
+backend/backend/mysql_test.json
+.vscode
+
+
