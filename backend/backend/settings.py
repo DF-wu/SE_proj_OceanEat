@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'OceanEat',
 ]
 
-# INSTALLED_APPS.append('OrderController.apps.OrdercontrollerConfig')
+INSTALLED_APPS.append('SearchIndex.apps.SearchindexConfig')
 INSTALLED_APPS.append('rest_framework')
 
 MIDDLEWARE = [

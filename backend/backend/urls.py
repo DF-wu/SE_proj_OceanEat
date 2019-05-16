@@ -19,7 +19,8 @@ from django.conf.urls import url, include
 from rest_framework.routers import DefaultRouter
 from django.views.generic import TemplateView
 from OceanEat import views
-import  OceanEat
+import OceanEat
+import SearchIndex.views
 
 router = DefaultRouter()
 
@@ -28,6 +29,7 @@ router.register(r'Customer', views.CustomerViewSet)
 router.register(r'Delivery', views.DeliveryViewSet)
 router.register(r'Restaurant', views.RestaurantViewSet)
 router.register(r'Dishes', views.DishesViewSet)
+router.register(r'SearchIndex', SearchIndex.views.SearchIndexViewSet)
 
 # For APIs
 urlpatterns = [
