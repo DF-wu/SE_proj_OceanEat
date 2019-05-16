@@ -39,10 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 'OceanEat.apps.OceanEatConfig',
     'OceanEat',
-]
 
+]
+INSTALLED_APPS.append('PriceCount.apps.PricecountConfig')
 INSTALLED_APPS.append('SearchIndex.apps.SearchindexConfig')
 INSTALLED_APPS.append('rest_framework')
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

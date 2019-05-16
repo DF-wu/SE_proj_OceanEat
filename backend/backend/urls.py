@@ -21,6 +21,7 @@ from django.views.generic import TemplateView
 from OceanEat import views
 import OceanEat
 import SearchIndex.views
+import PriceCount.views
 
 router = DefaultRouter()
 
@@ -30,7 +31,7 @@ router.register(r'Delivery', views.DeliveryViewSet)
 router.register(r'Restaurant', views.RestaurantViewSet)
 router.register(r'Dishes', views.DishesViewSet)
 router.register(r'SearchIndex', SearchIndex.views.SearchIndexViewSet)
-
+router.register(r'PriceCount', PriceCount.views.CountOrderPrice)
 # For APIs
 urlpatterns = [
     url(r'^api/', include(router.urls)),
