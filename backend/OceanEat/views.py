@@ -2,6 +2,10 @@
 from OceanEat.models import *
 from OceanEat.serializers import *
 from rest_framework import viewsets
+import json
+from django.contrib.sessions.models import Session
+from django.http import HttpResponse, JsonResponse
+from email.mime.text import MIMEText
 
 class CustomerViewSet(viewsets.ModelViewSet):
     queryset = Customer.objects.all()
