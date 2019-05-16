@@ -25,7 +25,7 @@ class OrderViewSet(viewsets.ModelViewSet):
 
 def login(request):
     message = "Welcome"
-
+    state = False
     if request.method == 'POST':
         
         login_password = "00"
@@ -37,27 +37,30 @@ def login(request):
             login_password = obj['password']
             #return HttpResponse(login_password)
             #message = "(" + username + ") 登入成功"
-    
             try:
                 user = models.User.objects.get(name = login_name)
                 if user.password == login_password:
                     request.session['username'] = user.name
                     request.session['useremail'] = user.email
-                    messages.add_message(request, messages.SUCCESS, '成功登入！')
+                    message = '成功登入！'
+                    state = True
                     return redirect('/')
                 else:
-                    messages.add_message(request, messages.WARNING, "密碼錯誤，請再檢查一次")
+                    message = "密碼錯誤，請再檢查一次"
+                    state = False
             except:
-                messages.add_message(request, messages.WARNING, "找不此使用者")
+                message = "找不此使用者"
+                state = False
         else:
-            messages.add_message(request, messages.INFO, "請檢查輸入的欄位內容")
+            messages = "請檢查輸入的欄位內容"
+            state = False
     else:
         login_form = forms.LoginForm()
 
     data={
-       'state':True,
+       'state':state,
        'usr': login_password,
-       'message':str(messages)
+       'message':str(messages),
     }
     #returnValue = magicNum, message
     return HttpResponse(json.dumps(data))
