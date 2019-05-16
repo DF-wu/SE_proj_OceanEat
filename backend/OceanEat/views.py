@@ -27,7 +27,7 @@ def login(request):
     message = "Welcome"
 
     if request.method == 'POST':
-        '''
+        
         login_password = "00"
         login_form = forms.LoginForm(request.POST)
         #if login_form.is_valid() or True:
@@ -42,6 +42,7 @@ def login(request):
         if login_form.is_valid():
             login_name = request.POST['username'].strip()
             login_password = request.POST['password']
+        '''
             try:
                 user = models.User.objects.get(name = login_name)
                 if user.password == login_password:
@@ -58,12 +59,12 @@ def login(request):
     else:
         login_form = forms.LoginForm()
 
-    #data={
-    #   'state':True,
-    #   'usr': login_password,
-    #   'message':message
-    #}
+    data={
+       'state':True,
+       'usr': login_password,
+       'message':message
+    }
     #returnValue = magicNum, message
-    #return HttpResponse(json.dumps(data))
-    return render(request, 'login.html', locals())
+    return HttpResponse(json.dumps(data))
+    #return render(request, 'login.html', locals())
 
