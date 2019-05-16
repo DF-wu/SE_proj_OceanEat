@@ -1,16 +1,10 @@
 from OceanEat.models import *
 from OceanEat.serializers import *
 from rest_framework import viewsets
-<<<<<<< HEAD
-from rest_framework.response import Response
-from rest_framework import viewsets, status
-from rest_framework.decorators import list_route
-=======
 import json
 from django.contrib.sessions.models import Session
 from django.http import HttpResponse, JsonResponse
 from email.mime.text import MIMEText
->>>>>>> UserModel_dev
 
 class CustomerViewSet(viewsets.ModelViewSet):
     queryset = Customer.objects.all()
