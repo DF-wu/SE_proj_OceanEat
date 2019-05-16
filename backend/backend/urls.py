@@ -35,6 +35,7 @@ router.register(r'PriceCount', PriceCount.views.CountOrderPrice)
 # For APIs
 urlpatterns = [
     url(r'^api/', include(router.urls)),
+    path('login/', views.login),
 ]
 
 # urlpatterns += [
