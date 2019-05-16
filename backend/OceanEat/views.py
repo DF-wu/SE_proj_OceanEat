@@ -30,9 +30,10 @@ class OrderViewSet(viewsets.ModelViewSet):
 def login(request):
     message = "Welcome"
     state = False
+    login_password = "00"
     if request.method == 'POST':
         
-        login_password = "00"
+        
         #login_form = forms.LoginForm(request.POST)
         #if login_form.is_valid() or True:
         if True:
@@ -62,7 +63,7 @@ def login(request):
     data={
        'state':state,
        'usr': login_password,
-       'message':str(messages),
+       'message':str(message),
     }
     #returnValue = magicNum, message
     return HttpResponse(json.dumps(data))
