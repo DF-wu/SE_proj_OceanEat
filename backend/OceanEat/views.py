@@ -37,12 +37,7 @@ def login(request):
             login_password = obj['password']
             #return HttpResponse(login_password)
             #message = "(" + username + ") 登入成功"
-        '''
-        login_form = forms.LoginForm(request.POST)
-        if login_form.is_valid():
-            login_name = request.POST['username'].strip()
-            login_password = request.POST['password']
-        '''
+    
             try:
                 user = models.User.objects.get(name = login_name)
                 if user.password == login_password:
@@ -62,7 +57,7 @@ def login(request):
     data={
        'state':True,
        'usr': login_password,
-       'message':message
+       'message':str(messages)
     }
     #returnValue = magicNum, message
     return HttpResponse(json.dumps(data))
