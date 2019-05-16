@@ -20,12 +20,12 @@ class Customer(models.Model):
         db_table = 'customer'
 
 class Delivery(models.Model):
-    delivery_id = models.ForeignKey(Customer, models.CASCADE)
-    delivery_rank = models.IntegerField(default=0)
-    delivery_rank_time = models.IntegerField(default=0)
+    delivery_staff_id = models.ForeignKey(Customer, models.CASCADE)
+    delivery_staff_rank = models.IntegerField(default=0)
+    delivery_staff_rank_time = models.IntegerField(default=0)
     class Meta:
         managed = True
-        db_table = 'delivery'
+        db_table = 'delivery_staff'
 
 class Restaurant(models.Model):
     restaurant_sireal = models.CharField(max_length=40, primary_key=True)
