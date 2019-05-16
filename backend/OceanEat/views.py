@@ -33,7 +33,7 @@ def login(request):
     if request.method == 'POST':
         
         login_password = "00"
-        login_form = forms.LoginForm(request.POST)
+        #login_form = forms.LoginForm(request.POST)
         #if login_form.is_valid() or True:
         if True:
             obj = json.loads(request.body.decode('UTF-8'))
@@ -58,9 +58,7 @@ def login(request):
         else:
             messages = "請檢查輸入的欄位內容"
             state = False
-    else:
-        login_form = forms.LoginForm()
-
+    
     data={
        'state':state,
        'usr': login_password,
