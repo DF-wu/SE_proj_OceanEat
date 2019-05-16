@@ -95,18 +95,18 @@ def login(request):
             #return HttpResponse(login_password)
             #message = "(" + username + ") 登入成功"
             try:
-                user = models.Customer.objects.get(mail_address = login_name)
-                if user.password == login_password:
-                    request.session['username'] = user.name
-                    request.session['useremail'] = user.email
+                user = Customer.objects.get(mail_address = login_name)
+                if user.psw == login_password:
+                    request.session['username'] = user.user_name
+                    request.session['useremail'] = user.mail_address
                     message = '成功登入！'
                     state = True
-                    return redirect('/')
+                    #return redirect('/')
                 else:
                     message = "密碼錯誤，請再檢查一次"
                     state = False
-            except:
-                message = "找不到此使用者"
+            except Exception as e:
+                message = "找不到此使用者" + str(e) + str(obj)
                 state = False
         else:
             messages = "請檢查輸入的欄位內容"
