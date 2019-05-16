@@ -43,7 +43,7 @@ def login(request):
             #return HttpResponse(login_password)
             #message = "(" + username + ") 登入成功"
             try:
-                user = models.User.objects.get(name = login_name)
+                user = models.Customer.objects.get(mail_address = login_name)
                 if user.password == login_password:
                     request.session['username'] = user.name
                     request.session['useremail'] = user.email
@@ -54,7 +54,7 @@ def login(request):
                     message = "密碼錯誤，請再檢查一次"
                     state = False
             except:
-                message = "找不此使用者"
+                message = "找不到此使用者"
                 state = False
         else:
             messages = "請檢查輸入的欄位內容"
@@ -62,7 +62,6 @@ def login(request):
     
     data={
        'state':state,
-       'usr': login_password,
        'message':str(message),
     }
     #returnValue = magicNum, message
