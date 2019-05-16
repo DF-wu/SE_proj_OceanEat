@@ -39,20 +39,26 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 'OceanEat.apps.OceanEatConfig',
     'OceanEat',
+    'corsheaders',
 ]
 
 INSTALLED_APPS.append('SearchIndex.apps.SearchindexConfig')
 INSTALLED_APPS.append('rest_framework')
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.BrokenLinkEmailsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'backend.urls'
 
