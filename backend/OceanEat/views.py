@@ -6,6 +6,16 @@ from django.contrib.sessions.models import Session
 from django.http import HttpResponse, JsonResponse
 from email.mime.text import MIMEText
 
+
+from rest_framework.response import Response
+from rest_framework import viewsets, status
+from rest_framework.decorators import list_route
+import json
+from django.contrib.sessions.models import Session
+from django.http import HttpResponse, JsonResponse
+from email.mime.text import MIMEText
+
+
 class CustomerViewSet(viewsets.ModelViewSet):
     queryset = Customer.objects.all()
     serializer_class = CustomerSerializer
