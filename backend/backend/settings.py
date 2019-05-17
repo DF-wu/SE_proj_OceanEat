@@ -26,7 +26,7 @@ SECRET_KEY = 'wb+f@kagx4lb(#wxs*a4c4ve-uro6^w*8dt(3k4rv@=b)@g#&='
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'cse.ntou.edu.tw',
+    '.cse.ntou.edu.tw.',
 ]
 
 
