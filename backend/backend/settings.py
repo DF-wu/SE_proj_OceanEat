@@ -25,7 +25,9 @@ SECRET_KEY = 'wb+f@kagx4lb(#wxs*a4c4ve-uro6^w*8dt(3k4rv@=b)@g#&='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'cse.ntou.edu.tw',
+]
 
 
 # Application definition
